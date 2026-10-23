@@ -1,0 +1,44 @@
+{
+  "name": "dsh-pormpt-global",
+  "version": "0.2.1-rc.2",
+  "description": "DeepSeek Harness 全局提示词插件：在设置页维护一组全局提示词（可单条开关），并作为系统提示词的用户层 section 注入。",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "pormpt-global",
+    "global-prompt"
+  ],
+  "engines": {
+    "node": ">=24.0.0",
+    "dsh": "<0.3.0"
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.18.5"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-settings": "<0.3.0",
+    "@deepseek-ai/dsh-system-prompt": "<0.3.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    }
+  }
+}
